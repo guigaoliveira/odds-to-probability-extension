@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Odds to Probability",
+  "version": "1.0.0",
+  "description": "Converte odds decimais em probabilidade implicita em qualquer site.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
