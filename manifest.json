@@ -2,10 +2,10 @@
   "manifest_version": 3,
   "name": "Odds to Probability",
   "version": "1.0.0",
-  "description": "Converte odds decimais em probabilidade implicita em qualquer site.",
+  "description": "Converte odds decimais em probabilidade implicita em dominios .bet.br.",
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["*://bet.br/*", "*://*.bet.br/*"],
       "js": ["content.js"],
       "run_at": "document_idle"
     }

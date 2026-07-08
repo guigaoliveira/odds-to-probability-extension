@@ -2,7 +2,7 @@
 
 Extensão simples para Chrome que converte odds decimais em probabilidade implícita diretamente na página.
 
-Foi criada para sites de apostas como a Betano, mas roda em qualquer página que exiba odds decimais no formato comum de sportsbook.
+Foi criada para sites de apostas brasileiros e roda apenas em domínios `.bet.br`.
 
 ## Exemplo
 
@@ -28,7 +28,7 @@ Esse percentual é a probabilidade implícita da odd. Ele não representa a prob
 3. Ative `Modo do desenvolvedor`.
 4. Clique em `Carregar sem compactação`.
 5. Selecione a pasta deste projeto.
-6. Recarregue a página do site onde quer usar.
+6. Recarregue a página do site `.bet.br` onde quer usar.
 
 ## Comportamento
 
