@@ -15,6 +15,8 @@ const { hasCurrencyNearMatch, isLineMarketContext, normalizeText } =
   context.globalThis.__oddsToProbabilityForTest;
 
 assert.equal(normalizeText("1.09"), "91.74%");
+assert.equal(normalizeText("1.001"), "99.90%");
+assert.equal(normalizeText("1.00"), "1.00");
 assert.equal(normalizeText("2.00"), "50.00%");
 assert.equal(normalizeText("7.90"), "12.66%");
 assert.equal(normalizeText("300.00"), "0.33%");
@@ -24,6 +26,7 @@ assert.equal(normalizeText("2.5"), "2.5");
 assert.equal(normalizeText("0.5"), "0.5");
 assert.equal(normalizeText("10.5"), "10.5");
 assert.equal(normalizeText("+1.5"), "+1.5");
+assert.equal(normalizeText("Mais de 1.001"), "Mais de 1.001");
 assert.equal(normalizeText("91.74%"), "91.74%");
 assert.equal(normalizeText("91.74%%"), "91.74%");
 assert.equal(normalizeText("1.09 (91.74%)"), "1.09 (91.74%)");

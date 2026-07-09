@@ -8,6 +8,7 @@ Foi criada para sites de apostas brasileiros e roda apenas em domínios `.bet.br
 
 ```txt
 1.09 -> 91.74%
+1.001 -> 99.90%
 2.00 -> 50.00%
 3.50 -> 28.57%
 7.90 -> 12.66%
@@ -54,9 +55,10 @@ Resultado:
 
 ## Heurística
 
-Para evitar falsos positivos, a extensão converte apenas odds com duas casas decimais:
+Para evitar falsos positivos, a extensão converte apenas odds com duas ou mais casas decimais:
 
 ```txt
+1.001
 1.90
 2.35
 11.00
@@ -81,6 +83,7 @@ Também ignora valores monetários, percentuais já convertidos e textos mistura
 Os testes cobrem:
 
 - odds com ponto e vírgula decimal;
+- odds com três ou mais casas decimais, como `1.001`;
 - odds altas, como `300.00` e `1000.00`;
 - páginas que atualizam o DOM com frequência;
 - proteção contra `%%`;
