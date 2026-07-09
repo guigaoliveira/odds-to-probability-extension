@@ -11,6 +11,8 @@ Foi criada para sites de apostas brasileiros e roda apenas em domínios `.bet.br
 2.00 -> 50.00%
 3.50 -> 28.57%
 7.90 -> 12.66%
+300.00 -> 0.33%
+1000.00 -> 0.10%
 ```
 
 A conta usada é:
@@ -58,6 +60,8 @@ Para evitar falsos positivos, a extensão converte apenas odds com duas casas de
 1.90
 2.35
 11.00
+300.00
+1000.00
 ```
 
 Ela evita converter valores que costumam ser linhas de mercado, handicaps ou totais:
@@ -77,6 +81,7 @@ Também ignora valores monetários, percentuais já convertidos e textos mistura
 Os testes cobrem:
 
 - odds com ponto e vírgula decimal;
+- odds altas, como `300.00` e `1000.00`;
 - páginas que atualizam o DOM com frequência;
 - proteção contra `%%`;
 - valores monetários como `R$1,00`, `R$55.56`, `$2.35`;

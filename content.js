@@ -1,6 +1,5 @@
 const CONFIG = {
   minOdd: 1.01,
-  maxOdd: 100,
   decimals: 2,
   mode: "replace",
   periodicScanMs: 1000,
@@ -17,9 +16,9 @@ const SKIP_TAGS = new Set([
   "PRE",
 ]);
 
-const ODDS_PATTERN = /[1-9]\d{0,2}[.,]\d{2}/g;
-const ODDS_ONLY_PATTERN = /^\s*([1-9]\d{0,2}[.,]\d{2})\s*$/;
-const MAY_HAVE_ODDS_PATTERN = /[1-9]\d{0,2}[.,]\d{2}|%{2,}/;
+const ODDS_PATTERN = /[1-9]\d*[.,]\d{2}/g;
+const ODDS_ONLY_PATTERN = /^\s*([1-9]\d*[.,]\d{2})\s*$/;
+const MAY_HAVE_ODDS_PATTERN = /[1-9]\d*[.,]\d{2}|%{2,}/;
 const REPEATED_PERCENT_PATTERN = /(\d+(?:[.,]\d+)?)%{2,}/g;
 const CURRENCY_BEFORE_PATTERN = /(?:R\$|US\$|BRL|USD|EUR|GBP|[$€£])\s*$/i;
 const CURRENCY_AFTER_PATTERN = /^\s*(?:R\$|US\$|BRL|USD|EUR|GBP|[$€£])/i;
@@ -36,7 +35,7 @@ function toProbabilityLabel(displayOdd) {
   const odd = Number(displayOdd.replace(",", "."));
 
   if (!Number.isFinite(odd)) return displayOdd;
-  if (odd < CONFIG.minOdd || odd > CONFIG.maxOdd) return displayOdd;
+  if (odd < CONFIG.minOdd) return displayOdd;
 
   const probability = (100 / odd).toFixed(CONFIG.decimals);
 

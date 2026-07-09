@@ -17,6 +17,8 @@ const { hasCurrencyNearMatch, isLineMarketContext, normalizeText } =
 assert.equal(normalizeText("1.09"), "91.74%");
 assert.equal(normalizeText("2.00"), "50.00%");
 assert.equal(normalizeText("7.90"), "12.66%");
+assert.equal(normalizeText("300.00"), "0.33%");
+assert.equal(normalizeText("1000.00"), "0.10%");
 assert.equal(normalizeText("1,20"), "83.33%");
 assert.equal(normalizeText("2.5"), "2.5");
 assert.equal(normalizeText("0.5"), "0.5");
